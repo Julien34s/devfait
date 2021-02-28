@@ -58,7 +58,7 @@ function CreateBlips()
 
 			BeginTextCommandSetBlipName("STRING")
 			AddTextComponentSubstringPlayerName(_U('free_prop'))
-			EndTextCommandSetBlipName(Blips[property.name])
+			--EndTextCommandSetBlipName(Blips[property.name])
 		end
 	end
 end
@@ -192,7 +192,7 @@ function SetPropertyOwned(name, owned, rented)
 
 		BeginTextCommandSetBlipName("STRING")
 		AddTextComponentSubstringPlayerName(_U('property'))
-		EndTextCommandSetBlipName(Blips[enteringName])
+		--EndTextCommandSetBlipName(Blips[enteringName])
 	else
 		OwnedProperties[name] = nil
 		local found = false
@@ -218,7 +218,7 @@ function SetPropertyOwned(name, owned, rented)
 
 			BeginTextCommandSetBlipName("STRING")
 			AddTextComponentSubstringPlayerName(_U('free_prop'))
-			EndTextCommandSetBlipName(Blips[enteringName])
+			--EndTextCommandSetBlipName(Blips[enteringName])
 		end
 	end
 end
