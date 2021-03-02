@@ -24,6 +24,8 @@ local ketamineQTE				= 0
 local ketamine_poochQTE 		= 0
 local ecstasyQTE				= 0
 local ecstasy_poochQTE 			= 0
+local organeQTE				    = 0
+local organe_poochQTE 			= 0
 local myJob 					= nil
 local HasAlreadyEnteredMarker   = false
 local LastZone                  = nil
@@ -233,6 +235,29 @@ AddEventHandler('esx_drugs:hasEnteredMarker', function(zone)
 			CurrentActionData = {}
 		end
 	end
+--------------------------------------------------------------
+if zone == 'OrganeField' then
+	CurrentAction     = zone
+	CurrentActionMsg  = _U('press_collect_organe')
+	CurrentActionData = {}
+end
+
+if zone == 'OrganeProcessing' then
+	if organeQTE >= 5 then
+		CurrentAction     = zone
+		CurrentActionMsg  = _U('press_process_organe')
+		CurrentActionData = {}
+	end
+end
+
+if zone == 'OrganeDealer' then
+	if organe_poochQTE >= 1 then
+		CurrentAction     = zone
+		CurrentActionMsg  = _U('press_sell_organe')
+		CurrentActionData = {}
+	end
+end
+
 end)
 
 AddEventHandler('esx_drugs:hasExitedMarker', function(zone)
@@ -269,6 +294,10 @@ AddEventHandler('esx_drugs:hasExitedMarker', function(zone)
 	TriggerServerEvent('esx_drugs:stopHarvestOpium')
 	TriggerServerEvent('esx_drugs:stopTransformOpium')
 	TriggerServerEvent('esx_drugs:stopSellOpium')
+	----------------------------------------------------
+	TriggerServerEvent('esx_drugs:stopHarvestOrgane')
+	TriggerServerEvent('esx_drugs:stopTransformOrgane')
+	TriggerServerEvent('esx_drugs:stopSellOrgane')
 end)
 
 -- Weed Effect
@@ -288,7 +317,7 @@ AddEventHandler('esx_drugs:onPot', function()
 	SetPedMovementClipset(GetPlayerPed(-1), "MOVE_M@DRUNK@SLIGHTLYDRUNK", true)
 	SetPedIsDrunk(GetPlayerPed(-1), true)
 	DoScreenFadeIn(1000)
-	Citizen.Wait(600000)
+	Citizen.Wait(60000)
 	DoScreenFadeOut(1000)
 	Citizen.Wait(1000)
 	DoScreenFadeIn(1000)
@@ -355,6 +384,10 @@ AddEventHandler('esx_drugs:ReturnInventory', function(cokeNbr, cokepNbr, methNbr
 	---------------------------
 	opiumQTE	   = opiumNbr
 	opium_poochQTE = opiumpNbr
+	---------------------------
+	organeQTE	   = organeNbr
+	organe_poochQTE = organepNbr
+	-----------------------------
 	myJob		   = jobName
 	TriggerEvent('esx_drugs:hasEnteredMarker', currentZone)
 end)
@@ -462,6 +495,13 @@ Citizen.CreateThread(function()
 					TriggerServerEvent('esx_drugs:startTransformOpium')
 				elseif CurrentAction == 'OpiumDealer' then
 					TriggerServerEvent('esx_drugs:startSellOpium')
+				------------------------------------------------------------
+				elseif CurrentAction == 'OrganeField' then
+					TriggerServerEvent('esx_drugs:startHarvestOrgane')
+				elseif CurrentAction == 'OpiumProcessing' then
+					TriggerServerEvent('esx_drugs:startTransformOrgane')
+				elseif CurrentAction == 'OpiumDealer' then
+					TriggerServerEvent('esx_drugs:startSellOrgane')
 				else
 					isInZone = false -- not a esx_drugs zone
 				end

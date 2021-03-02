@@ -27,6 +27,12 @@ Config.RequiredCopsKetamine = 0
 Config.RequiredCopsEcstasy  = 0
 -------------------------------
 Config.RequiredCopsOpium    = 0
+--------------------------------
+Config.RequiredCopsOrgane    = 3
+Config.TimeToFarmOrgane       = 10 * 1000
+Config.TimeToProcessOrgane    = 10 * 1000 
+Config.TimeToSellOrgane       = 10 * 1000
+-------------------------------------
 
 Config.TimeToFarm           = 5 * 1000
 Config.TimeToProcess        = 5 * 1000
@@ -40,11 +46,11 @@ Config.Zones = {
     CokeDealer          = {x=2393.748,  y =4981.538,  z=45.348,   	   name = _U('coke_dealer'),        sprite = 500,    color = 75},
 	---------------------------------------------------------------------------------------------------------------------------
 	---------------------------------------------------------------------------------------------------------------------------
-	MethField          = {x = 2725.328, y = 4302.024, z = 47.686,	name = _U('meth_field'),		sprite = 499,	color = 26},
-	MethlabField       = {x = 191.992,	y = -2226.622,	z = 6.971,	name = _U('meth_processing'),	sprite = 499,	color = 26},
+	--MethField          = {x = 2725.328, y = 4302.024, z = 47.686,	name = _U('meth_field'),		sprite = 499,	color = 26},
+	MethlabField       = {x = 2725.328, y = 4302.024, z = 47.686,	name = _U('meth_processing'),	sprite = 499,	color = 26},
 	--AcetoneField        = {x=0.0,  	   y=0.0,    	 z=0.0,   	name = _U('acetone_field'),      sprite = 499,    color = 26},
 	--LithiumField        = {x=0.0,  	   y=0.0,    	 z=0.0,   	name = _U('lithium_field'),      sprite = 499,    color = 26},
-	--MethProcessing      = {x=0.0,  	   y=0.0,        z=0.0,     name = _U('meth_processing'),    sprite = 499,    color = 26},
+	MethProcessing      = {x = 191.992,	y = -2226.622,	z = 6.971,     name = _U('meth_processing'),    sprite = 499,    color = 26},
     --MethDealer          = {x=0.0,      y=0.0,        z=0.0,    	name = _U('meth_dealer'),        sprite = 500,    color = 75},
 	---------------------------------------------------------------------------------------------------------------------------
 	---------------------------------------------------------------------------------------------------------------------------
@@ -57,8 +63,8 @@ Config.Zones = {
 	--CrackDealer         = {x=0,         y=0,         z=16.763,	name = _U('crack_dealer'),		 sprite = 500,	color = 75},
         ---------------------------------------------------------------------------------------------------------------------------
         ---------------------------------------------------------------------------------------------------------------------------
-    --KetamineField       = {x=1003.918,  y=-3199.353, z=-38.993,	name = _U('ketamine_field'),	 sprite = 499,	color = 26},
-	--KetamineProcessing  = {x=1011.043,  y=-3196.531, z=-38.993,	name = _U('ketamine_processing'),sprite = 499,	color = 26},
+    KetamineField       = {x=1003.918,  y=-3199.353, z=-38.993,	name = _U('ketamine_field'),	 sprite = 499,	color = 26},
+	KetamineProcessing  = {x=1011.043,  y=-3196.531, z=-38.993,	name = _U('ketamine_processing'),sprite = 499,	color = 26},
 	--KetamineDealer      = {x=0,         y=0,         z=0,	    name = _U('ketamine_dealer'),	 sprite = 500,	color = 75},
 	    ---------------------------------------------------------------------------------------------------------------------------
         ---------------------------------------------------------------------------------------------------------------------------
@@ -68,5 +74,9 @@ Config.Zones = {
 	---------------------------------------------------------------------------------------------------------------------------
 	OpiumField      = {x = 174.801,	y = 2219.873,	z = 90.716,	name = _U('opium_field'),		sprite = 51,	color = 60},
 	OpiumProcessing = {x = -2223.160,	y = -365.570,	z = 13.321,	name = _U('opium_processing'),	sprite = 51,	color = 60},
-	--OpiumDealer     	= {x=-1217.199, y=-1055.398, z=8.412,	name = _U('opium_dealer'),		 sprite = 500,	color = 75}
+	--OpiumDealer     	= {x=-1217.199, y=-1055.398, z=8.412,	name = _U('opium_dealer'),		 sprite = 500,	color = 75},
+	---------------------------------------------------------------------------------------------------------------------------
+	OrganeField = {x=0, 		y=0, 		 z=0,		name = _U('organe_field'), sprite = 51,	color = 60},
+	OrganeProcessing = {x=0, 		y=0, 		 z=0,		name = _U('organe_processing'), sprite = 51,	color = 60},
+	OrganeDealer = {x=0, 		y=0, 		 z=0,		name = _U('organe_dealer'), sprite = 51,	color = 60}
 }
