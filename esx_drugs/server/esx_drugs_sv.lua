@@ -57,7 +57,7 @@ local function HarvestCoke(source)
 		return
 	end
 
-	SetTimeout(Config.TimeToFarm, function()
+	SetTimeout(Config.TimeToFarmcoke , function()
 
 		if PlayersHarvestingCoke[source] == true then
 
@@ -105,7 +105,7 @@ local function TransformCoke(source)
 		return
 	end
 
-	SetTimeout(Config.TimeToProcess, function()
+	SetTimeout(Config.TimeToProcesscoke, function()
 
 		if PlayersTransformingCoke[source] == true then
 
@@ -154,12 +154,12 @@ end)
 
 local function SellCoke(source)
 
-	if CopsConnected < Config.RequiredCopsCoke then
+	if CopsConnected < Config.RequiredCopsVCoke then
 		TriggerClientEvent('esx:showNotification', source, _U('act_imp_police', CopsConnected, Config.RequiredCopsCoke))
 		return
 	end
 
-	SetTimeout(Config.TimeToSell, function()
+	SetTimeout(Config.TimeToSellcoke, function()
 
 		if PlayersSellingCoke[source] == true then
 

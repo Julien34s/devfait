@@ -6,21 +6,27 @@ Config.MarkerColor  = {r = 100, g = 204, b = 100}
 Config.ShowBlips    = false
 
 Config.RequiredCopsWeed  	= 0
+-------COKE----------------------
 Config.RequiredCopsCoke  	= 0
 Config.RequiredCopsTCoke    = 1
+Config.RequiredCopsVcoke    = 1
+--Time
+Config.TimeToFarmcoke       = 6 * 1000
+Config.TimeToProcesscoke    = 6 * 1000 
+Config.TimeToSellcoke       = 6 * 1000
 --------------------------------
 --------------------------------
-Config.RequiredCopsMeth     = 2
-Config.RequiredCopsMethlab  = 2
-Config.RequiredCopsAcetone  = 2
-Config.RequiredCopsLithium  = 2
+Config.RequiredCopsMeth     = 0
+Config.RequiredCopsMethlab  = 0
+Config.RequiredCopsAcetone  = 0
+Config.RequiredCopsLithium  = 0
 --------------------------------
 --------------------------------
-Config.RequiredCopsCrack    = 2
-Config.RequiredCopsKetamine = 2
-Config.RequiredCopsEcstasy  = 3
+Config.RequiredCopsCrack    = 0
+Config.RequiredCopsKetamine = 0
+Config.RequiredCopsEcstasy  = 0
 -------------------------------
-Config.RequiredCopsOpium    = 2
+Config.RequiredCopsOpium    = 0
 
 Config.TimeToFarm           = 5 * 1000
 Config.TimeToProcess        = 5 * 1000
