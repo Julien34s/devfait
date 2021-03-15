@@ -6,7 +6,7 @@ Config.MarkerColor = {r = 102, g = 102, b = 204}
 Config.RoomMenuMarkerColor = {r = 102, g = 204, b = 102}
 Config.MarkerType = 27
 
-Config.RentModifier = 200 -- rent price: <property price> / <rent modifier> (rounded)
+Config.RentModifier = 250 -- rent price: <property price> / <rent modifier> (rounded)
 Config.SellModifier = 2   -- sell price: <property price> / <sell modifier> (rounded)
 
 Config.Properties = {}
